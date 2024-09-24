@@ -6,8 +6,6 @@ router.get("/test", (req, res) => {
     res.send("Hello World")
 });
 
-//Allt vårat gammalt skit
-
 router.get("/", (req, res) => {
     console.log(req.query)
     const name = req.query.name
@@ -38,6 +36,11 @@ router.get("/watch", (req, res) => {
             title: `Cars 3`,
             year: 2017,
             ID: "2LeOH9AGJQM",
+        },
+        "Deadpool": {
+            title: `Deadpool 2`,
+            year: 2018,
+            ID: "Ypwd5gsnImE",
         }
     }
 
@@ -45,7 +48,7 @@ router.get("/watch", (req, res) => {
     console.log(movie)
 
     res.render("watch.njk", {
-        title: `watch`,
+        title: `Watch`,
         movie: movie,
     })
     //res.json(movie)
