@@ -1,0 +1,20 @@
+{% extends "layout.njk" %}
+{% block content %}
+<main>
+    <h1>{{title}}</h1>
+    <form action="/calc" method="get">
+        <input type="number" name="num1" placeholder="Number 1" value="{{query}}">
+        <input type="number" name="num2" placeholder="Number 2" value="{{query}}">
+        <select name="method">
+            <option value="add">add</option>
+        </select>
+     
+        <button type="submit" >Calc</button>
+    </form>
+
+    {% if sum and num1 and num2 != ''%}
+        <p>{{num1}} + {{num2}} = {{sum}}</p>
+    {%endif%}
+    
+</main>
+{% endblock %}
